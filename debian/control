@@ -1,15 +1,38 @@
-Source: template-repository
-Section: unknown
+Source: ext4magic
+Section: utils
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Security Tools <team+pkg-security@tracker.debian.org>
+Uploaders:
+ Giovani Augusto Ferreira <giovani@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ e2fslibs-dev,
+ libblkid-dev,
+ libbz2-dev,
+ libmagic-dev,
+ zlib1g-dev
+Standards-Version: 4.5.1
+Rules-Requires-Root: binary-targets
+Homepage: http://ext4magic.sf.net/ext4magic_en.html
+Vcs-Git: https://salsa.debian.org/pkg-security-team/ext4magic.git
+Vcs-Browser: https://salsa.debian.org/pkg-security-team/ext4magic
 
-Package: template-repository
+Package: ext4magic
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: recover deleted files from ext3 or ext4 partitions
+ ext4magic is a file carver (or file carving). It can be used when recovering
+ from disasters or in digital forensics activities.
+ .
+ The deletion of files in ext3/4 filesystems can not be easily reversed. Zero
+ out of the block references in the inodes makes that impossible. Experiences
+ with other programs have proved that is possible restore sufficient information
+ for a recover of many data files, directly from the filesystem journal.
+ .
+ ext4magic can extract the information from the journal and restore files in an
+ entire directory tree, if the information in the journal are sufficient.
+ .
+ This tool can recover the most file types, with original filename, owner and
+ group, file mode bits and also the old atime/mtime stamps.
