@@ -1,5 +1,208 @@
-template-repository (1.0-1) unstable; urgency=medium
+ext4magic (0.3.2-14) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Archive, Repository.
+  * Update standards version to 4.5.0, no changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Giovani Augusto Ferreira ]
+  * Bumped DH level to 13.
+  * Bumped Standards-Version to 4.5.1
+  * debian/copyright: updated packaging copyright years.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+
+  [ Samuel Henrique ]
+  * Configure git-buildpackage for Debian
+
+ -- Giovani Augusto Ferreira <giovani@debian.org>  Wed, 03 Feb 2021 11:26:02 -0300
+
+ext4magic (0.3.2-13) unstable; urgency=medium
+
+  [ Giovani Augusto Ferreira ]
+  * Using new DH level format. Consequently:
+      - debian/compat: removed.
+      - debian/control: Changed from 'debhelper' to 'debhelper-compat' in
+        Build-Depends field and bumped level to 12.
+  * debian/control:
+      - Added the field Rules-Requires-Root: binary-targets.
+      - Standards-Version: bumped to 4.4.1 (no changes needed)
+  * debian/copyright:
+      - Updated years and rights.
+  * debian/patches/fix-spelling-manpage.patch: updated.
+  * debian/upstream/metadata: created.
+  * wrap-and-sort -sa
+
+  [ Samuel Henrique ]
+  * Add salsa-ci.yml
+
+ -- Giovani Augusto Ferreira <giovani@debian.org>  Sat, 28 Dec 2019 16:11:56 -0300
+
+ext4magic (0.3.2-12) unstable; urgency=medium
+
+  * Team upload.
+  * debian/tests/control: added a restriction to validate a test.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Thu, 13 Dec 2018 18:31:29 -0200
+
+ext4magic (0.3.2-11) unstable; urgency=medium
+
+  * Team upload.
+  * debian/control: bumped Standards-Version to 4.2.1.
+  * debian/copyright:
+      - Added rights for Hilko Bengen and Raphaël Hertzog.
+      - Updated packaging copyright years.
+  * debian/patches/:
+      - fix-FTBFS-with-glibc-2.28.patch: added to fix a FTBFS. (Closes: #916064)
+      - fix-spelling.patch: added to fix a wrong word shown in screen.
+  * debian/source/include-binaries: added to control debian/tests/test.img.
+  * debian/tests/*: created to provide trivial tests.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 10 Dec 2018 10:13:29 -0200
+
+ext4magic (0.3.2-10) unstable; urgency=medium
+
+  * debian/changelog: fixed Debian version not released
+
+ -- Giovani Augusto Ferreira <giovani@debian.org>  Tue, 15 May 2018 15:19:11 -0300
+
+ext4magic (0.3.2-9) unstable; urgency=medium
+
+  [ Raphaël Hertzog ]
+  * Update team maintainer address to Debian Security Tools
+    <team+pkg-security@tracker.debian.org>
+  * Update Vcs-Git and Vcs-Browser for the move to salsa.debian.org
+
+  [ Hilko Bengen ]
+  * Add patch to fix FTBFS with new e2fsprogs (Closes: #894649)
+
+  [ Giovani Augusto Ferreira ]
+  * Update my email address
+  * Update to https Format URI
+  * Bumped DH level to 11
+  * Bumped Standards-Version to 4.1.4
+  * Removed unnecessary dh argument and removed autoreconf build-depends
+  * Added a head for the patch
+
+ -- Giovani Augusto Ferreira <giovani@debian.org>  Tue, 15 May 2018 11:43:25 -0300
+
+ext4magic (0.3.2-8) UNRELEASED; urgency=medium
+
+  * unreleased packaging revision because it was
+    mistakenly duplicated with revision 9
+
+ -- Giovani Augusto Ferreira <giovani@debian.org>  Tue, 15 May 2018 10:59:39 -0300
+
+ext4magic (0.3.2-7) unstable; urgency=medium
+
+  * Update DH level to 10.
+  * debian/compat: updated to 10.
+  * debian/rules: removed the '--with autoreconf' because it is default
+    in DH 10.
+
+ -- Giovani Augusto Ferreira <giovani@riseup.net>  Fri, 16 Dec 2016 23:04:41 -0200
+
+ext4magic (0.3.2-6) unstable; urgency=medium
+
+  * debian/control:
+      - Bumped Standards-Version to 3.9.8.
+  * debian/patches:
+      - Added the '.patch' extension to all patches.
+      - fix-spelling-manpage.patch:
+          ~ Added a typing error correction for ext4magic.8.
+
+ -- Giovani Augusto Ferreira <giovani@riseup.net>  Sat, 24 Sep 2016 19:54:39 -0300
+
+ext4magic (0.3.2-5) unstable; urgency=medium
+
+  * debian/control: Changed from cgit to git in Vcs-Browser field.
+  * debian/patches/fix-spelling-manpage: updated to fix more spelling
+    errors in manpage.
+  * debian/watch: bumped to version 4.
+
+ -- Giovani Augusto Ferreira <giovani@riseup.net>  Sun, 20 Mar 2016 23:17:24 -0300
+
+ext4magic (0.3.2-4) unstable; urgency=medium
+
+  * New co-maintainer. Thanks a lot to Eriberto Mota, the initial
+    maintainer of this package.
+  * debian/control
+      - Bumped Standards-Version to 3.9.7.
+      - Fixed a word in long description.
+      - Updated Vcs-* fields.
+  * debian/copyright:
+      - Added my name at debian/* block.
+      - Dropped dot-zero from GPL license short name.
+      - Fixed the packaging years for the last maintainer.
+  * debian/patches/fix-spelling-manpage: added to fix some spelling
+    errors in manpage.
+  * debian/watch: updated.
+
+ -- Giovani Augusto Ferreira <giovani@riseup.net>  Sat, 20 Feb 2016 23:20:11 -0200
+
+ext4magic (0.3.2-3) unstable; urgency=medium
+
+  * debian/patches/fix-recover-examine.patch: added as a temporary work
+      around to fix an issue which makes impossible to recover or examine
+      Ext4 filesystems. Thanks to Roberto Maar <robi6@users.sf.net>, the
+      ext4magic upstream. (see #802089 for more details)
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Sun, 29 Nov 2015 22:49:23 -0200
+
+ext4magic (0.3.2-2) unstable; urgency=medium
+
+  * Bumped Standards-Version to 3.9.6.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Sun, 26 Oct 2014 19:52:20 -0200
+
+ext4magic (0.3.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control: updated the homepage field.
+  * debian/copyright:
+      - Fixed a typo in 'src/kernel-jbd.h' name (from jdb to jbd).
+      - Renamed 'Simplified BSD license' to 'BSD-2-clause'.
+      - Updated the upstream email address and download site.
+      - Updated the upstream copyright years.
+  * debian/patches/: removed. The upstream fixed the source code. Thanks
+      to Roberto Maar.
+  * debian/README.Debian: added to provide notices about important URLs.
+  * debian/rules: added the DEB_BUILD_MAINT_OPTIONS variable to fix the
+      issues pointed by blhc.
+  * debian/watch: updated to support the SourceForge.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 15 Sep 2014 14:32:48 -0300
+
+ext4magic (0.3.1-4) unstable; urgency=medium
+
+  * New maintainer email address.
+  * debian/control: updated the Vcs-Browser field.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Tue, 05 Aug 2014 11:45:53 -0300
+
+ext4magic (0.3.1-3) unstable; urgency=medium
+
+  * debian/copyright: updated the packaging years.
+  * debian/source/lintian-overrides: removed as requested by Paul Wise.
+    Thanks to Paul for explanations about the idea of the GPG sign check.
+  * debian/watch: updated. The upstream changed the download path.
+
+ -- Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>  Sat, 15 Mar 2014 18:20:10 -0300
+
+ext4magic (0.3.1-2) unstable; urgency=medium
+
+  * debian/control:
+      - Bumped Standards-Version from 3.9.4 to 3.9.5.
+      - Updated the Vcs-Git to use canonical URL.
+  * debian/gbp.conf: added to allow git-buildpackage use.
+  * debian/rules:
+      - Added --enable-expert-mode to dh_auto_configure.
+      - Removed some comments.
+  * debian/source/: added an override to reply to check-gpg-signature.
+  * debian/watch: improved.
+
+ -- Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>  Mon, 30 Dec 2013 16:42:20 -0200
+
+ext4magic (0.3.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #705413)
+
+ -- Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>  Mon, 15 Apr 2013 16:35:05 -0300
